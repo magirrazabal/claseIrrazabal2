@@ -1,0 +1,60 @@
+* {
+    margin: 0; padding: 0;
+    font-family: sans-serif;
+}
+.container-fluid {
+    background-color: #caf0f8;
+    text-align: center;
+}
+.navbar-brand {
+    color: #03045e;
+}
+.nav-item {
+    color: #0077b6;
+}
+.cuerpo {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas: "titulo" "textito" "cartas" "boton";
+    align-content: center;
+    display: flex;
+}
+.titulo {
+    grid-area: titulo;
+    color: #0077b6;
+    padding: 5px;
+    margin: 5px;
+}
+.textito {
+    grid-area: textito;
+}
+.cartas {
+    grid-area: cartas;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    height: auto;
+    width: 900px;  
+}
+.boton {
+    grid-area: boton;
+    background-color: #0077b6;
+    margin: 7px;
+}
+.boton:hover {
+    background-color: #03045e;
+}
+.card {
+    padding: 5px;
+    margin: 5px;
+    background-color: #caf0f8;
+}
+.pie {
+    margin: 10px;
+}
+.reservasPag {
+    background-color: #caf0f8;
+}
+.mensaje {
+    color: #0077b6;
+}
