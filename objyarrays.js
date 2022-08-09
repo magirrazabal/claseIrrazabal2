@@ -4,17 +4,14 @@ class gymClase {
         this.nombre = nombre
         this.hora = hora
         this.capacidad = capacidad
-        this.disponibilidad = disponibilidad
+        this.disponibilidad = disponibilidad //Espacio disponible en base a reservas
         this.calcularDisponibilidad = function(reservas){
-            if(reservas > this.capacidad){            
+            if(reservas >= this.capacidad){            
             this.disponibilidad = false            
             }
             else {
                 this.disponibilidad = true
             }
-        this.calcularCapacidad = function (reservas) {
-            this.capacidad = this.capacidad - reservas
-        }  
     }
 }
 }
@@ -29,19 +26,25 @@ const clase5 = new gymClase ("boxeo", "Lu - Vie 19:00", 20, false)
 // //array
 const clases = [clase1, clase2, clase3, clase4, clase5];
 
-
-
-//función para recorrer el array
 function recorrerClases() {
-
+debugger
 for (let clase of clases) {
     console.table(clase)
 }
 }
+
 //método slice para ver solo clases disponibles
 const disponible = clases.slice(1, 5);
  function verDisponibles (){
+    debugger
     for (let claseDisp of disponible) {
-    console.log(claseDisp.nombre)
+    console.log("La clase", claseDisp.nombre, "está disponible")
  }
 }
+
+//función para recorrer el array
+recorrerClases()
+
+//función para ver clases disponibles
+verDisponibles ()
+
