@@ -16,11 +16,11 @@ class gymClase {
 }
 }
 //objetos
-const clase1 = new gymClase ("functional", "Lu - Mie - Vie 16:00", 15, false)
-const clase2 = new gymClase ("spinning", "Lu - Vie 15:00", 20, true)
-const clase3 = new gymClase ("pilates", "Mar - Jue - Sab 17:30", 15, true)
-const clase4 = new gymClase ("yoga", "Mar - Jue - Sab 20:30", 10, true)
-const clase5 = new gymClase ("boxeo", "Lu - Vie 19:00", 20, false)
+const clase1 = new gymClase ("functional", "lunes - miercoles - viernes 16:00", 15, false)
+const clase2 = new gymClase ("spinning", "lunes a viernes 15:00", 20, true)
+const clase3 = new gymClase ("pilates", "martes - jueves - sabado 17:30", 15, true)
+const clase4 = new gymClase ("yoga", "martes - jueves - sabado 20:30", 10, true)
+const clase5 = new gymClase ("boxeo", "lunes a viernes 19:00", 20, false)
 
 
 // //array
@@ -32,8 +32,6 @@ for (let clase of clases) {
     console.table(clase)
 }
 }
-
-//método slice para ver solo clases disponibles
 const disponible = clases.slice(1, 5);
  function verDisponibles (){
     debugger
@@ -41,10 +39,27 @@ const disponible = clases.slice(1, 5);
     console.log("La clase", claseDisp.nombre, "está disponible")
  }
 }
+function filtrarClases () {
+    let claseFound = prompt ("Qué día querés entrenar?").toLowerCase()
+    debugger
+    const resultado = clases.filter (elemento => elemento.hora.includes(claseFound))
+    console.table (resultado)
+}
+function existeClase() {
+    let busqueda = prompt("¿Qué clase buscas?").toLowerCase()
+    debugger
+    const resultado = clases.some (elemento => elemento.nombre === busqueda)
+    console.log("Tenemos la clase que buscás?", resultado)
+}
 
 //función para recorrer el array
 recorrerClases()
 
-//función para ver clases disponibles
+//método slice para ver solo clases disponibles
 verDisponibles ()
 
+//función some para ver qué clases tenemos
+existeClase ()
+
+//función filter para encontrar clases por día
+filtrarClases ()
