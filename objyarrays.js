@@ -60,6 +60,13 @@ function existeClase() {
 
 }
 
+function cambiarTitulo(){
+    tituloDinamico.innerText = "Clases disponibles"
+}
+function esconderCartas() {
+todas.remove()
+}
+
 //función para recorrer el array recorrerClases()
 
 //método slice para ver solo clases disponibles verDisponibles()
@@ -73,21 +80,13 @@ const parrafo = document.getElementById("parrafo")
 const cartas = document.getElementsByClassName("card")
 const pie = document.getElementsByClassName("pie")
 const boton = document.getElementById("boton")
+const tituloDinamico = document.getElementById("tituloDinamico")
+const todas = document.getElementById("todas")
 
-// function crearTablaClases() {
-//     const completo = document.getElementById("completo")
-//     clases.forEach(clase => {
-//         completo.innerHTML += `<tr>
-//                                 <td>${clase.nombre}</td>
-//                                 <td>${clase.hora}</td>
-//                                 <td>${clase.capacidad}</td>
-//                                 <td>${clase.disponibilidad}</td>
-//                             </tr>`
-//     })
-// }
-// crearTablaClases()
-existeClase()
-filtrarClases()
+existeClase() //función para ver clases
+filtrarClases() //función para filtrar clases y crear tabla
+cambiarTitulo() //todas las clases a clases disponibles
+esconderCartas() //cartas de clases se esconden
 
 
 
