@@ -50,61 +50,48 @@
     <div>
       <h2 id="titulo" class="titulo d-flex justify-content-center">Opciones para reservar</h2>
       <div>
-        <p  id="parrafo" id="textito" class="textito d-flex justify-content-center">Para reservar tu clase, hacé click en reservar, y seguí los pasos
-        de la nueva pestaña.</p>
+        <p id="parrafo" id="textito" class="textito d-flex justify-content-center">Para reservar tu clase, hacé click en
+          reservar, y seguí los pasos
+          de la nueva pestaña.</p>
         <br>
-      <p><strong>Nombre de usuario:</strong> Emiliano</p>
-      <p><strong>Contraseña:</strong> 1234</p>
-      </p>
-      <body data-theme="light">
-        <h3 id="tituloDinamico" >Todas las clases</h3>
-        <div id="todas">
-        <div id="cartas" class="cartas d-flex justify-content-evenly">
-          <div class="card" style="width: 18rem;">
-            <div class="card-body">
-              <h5 class="card-title">Spinning</h5>
-            </div>
-          </div>
-          <div class="card" style="width: 18rem;">
-            <div class="card-body">
-              <h5 class="card-title">Functional</h5>
-            </div>
-          </div>
-          <div class="card" style="width: 18rem;">
-            <div class="card-body">
-              <h5 class="card-title">Pilates</h5>
-            </div>
-          </div>
-          <div class="card" style="width: 18rem;">
-            <div class="card-body">
-              <h5 class="card-title">Boxeo</h5>
-            </div>
-          </div>
-          <div class="card" style="width: 18rem;">
-            <div class="card-body">
-              <h5 class="card-title">Yoga</h5>
-            </div>
-          </div>
-        </div>
-      </div>
-          <br>
-        <article class="container">
+        <button class="boton botonTodas btn btn-primary" role="button">TODAS LAS
+          CLASES</button>
+        <button class="boton botonFiltro btn btn-primary" role="button">FILTRAR
+          CLASES</button>
+        <button class="boton botonReserva btn btn-primary"
+          role="button">RESERVAR</button>
+        <body data-theme="light">
+          <h3 id="tituloDinamico">Todas las clases</h3>
+          <article class="container">
+            <!-- <table class="table table-success table-striped">
+              <thead class="table-dark">
+                <tr>
+                  <th>Clase</th>
+                  <th>Hora</th>
+                  <th>Capacidad</th>
+                  <th>Disponibilidad</th>
+                </tr>
+              </thead>
+              <tbody id="cuerpoTodas">
+
+              </tbody>
+            </table> -->
+          </article>
+          <article class="container">
             <table class="table table-success table-striped">
-                <thead class="table-dark">
-                    <tr>
-                        <th>Clase</th>
-                        <th>Hora</th>
-                        <th>Capacidad</th>
-                        <th>Disponibilidad</th>
-                    </tr>
-                </thead>
-                <tbody id="cuerpo">
-    
-                </tbody>
+              <thead class="table-dark">
+                <tr>
+                  <th>Clase</th>
+                  <th>Hora</th>
+                  <th>Capacidad</th>
+                  <th>Disponibilidad</th>
+                </tr>
+              </thead>
+              <tbody id="cuerpo">
+
+              </tbody>
             </table>
-      <a id="boton" href="./paginas/reservas.html" target="_blank" class="d-grid gap-2 boton btn btn-primary"
-        role="button">RESERVAR</a>
-    </div>
+          </article>
   </main>
   <footer class="pie d-flex justify-content-center">
     <p>Wellnes Gym®</p>

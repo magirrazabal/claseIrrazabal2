@@ -38,6 +38,7 @@ function verDisponibles() {
     }
 }
 function filtrarClases() {
+    cuerpo.innerHTML=""
     let claseFound = prompt("Qué día querés entrenar?").toLowerCase()
     const resultado = clases.filter(elemento => elemento.hora.includes(claseFound))
 
@@ -51,20 +52,74 @@ function filtrarClases() {
                                 <td>${clase.disponibilidad}</td>
                             </tr>`
     })
+    cambiarTitulo()
 }
 
+function mostrarTodas() {
+    cuerpo.innerHTML=""
+    clases.forEach(clase => {
+                cuerpo.innerHTML += `<tr>
+                                <td>${clase.nombre}</td>
+                                <td>${clase.hora}</td>
+                                <td>${clase.capacidad}</td>
+                                <td>${clase.disponibilidad}</td>
+                            </tr>`
+    })
+    tituloOriginal()
+}
 function existeClase() {
     let busqueda = prompt("¿Qué clase buscas?").toLowerCase()
     const resultado = clases.some(elemento => elemento.nombre === busqueda)
     console.log("Tenemos la clase que buscás?", resultado)
 
 }
+function elegirClase() {
+    let clase = prompt("¿Qué clase quiere reservar?").toLowerCase()
+    switch (clase) {
+        case "functional":
+            alert("Esta clase está completa");
+            elegirClase();
+            break;
+        case "yoga":
+            alert("Esta clase está completa");
+            elegirClase();
+            break;
+        case "spinning":
+            alert("¡Listo! Gracias por reservar.")
+            break;
+        case "boxeo":
+            alert("¡Listo! Gracias por reservar.")
+            break;
+        case "pilates":
+            alert("¡Listo! Gracias por reservar.")
+            break;
+        default:
+            alert("Ingrese una clase válida")
+            elegirClase();
+            break
+    }
+}
 
-function cambiarTitulo(){
+function reserva(){
+let userName = prompt("Ingrese el nombre de usuario");
+let password = prompt ("Ingrese su contraseña");
+if ((userName != "") && (userName == "Emiliano" && password == "1234")) {
+    alert ("Bienvenido, " + userName);
+   elegirClase();
+} 
+else {
+    alert("No se reconoce el usuario y/o contraseña");
+}
+}
+
+function cambiarTitulo() {
     tituloDinamico.innerText = "Clases disponibles"
 }
+function tituloOriginal(){
+tituloDinamico.innerText = "Todas las clases"
+}
 function esconderCartas() {
-todas.remove()
+    todas.remove()
 }
 
 //función para recorrer el array recorrerClases()
@@ -75,18 +130,26 @@ todas.remove()
 
 //función filter para encontrar clases por día filtrarClases()
 
-const titulo = document.getElementById("titulo")
-const parrafo = document.getElementById("parrafo")
-const cartas = document.getElementsByClassName("card")
-const pie = document.getElementsByClassName("pie")
-const boton = document.getElementById("boton")
-const tituloDinamico = document.getElementById("tituloDinamico")
-const todas = document.getElementById("todas")
+const titulo = document.querySelector("#titulo")
+const parrafo = document.querySelector("#parrafo")
+const cartas = document.querySelector(".card")
+const pie = document.querySelector(".pie")
+const tituloDinamico = document.querySelector("#tituloDinamico")
+const todas = document.querySelector("#todas")
+const botonTodas = document.querySelector(".botonTodas")
+const botonFiltro = document.querySelector(".botonFiltro")
+const botonReserva = document.querySelector(".botonReserva")
+//existeClase() //función para ver clases
+//filtrarClases() //función para filtrar clases y crear tabla
+//cambiarTitulo() //todas las clases a clases disponibles
+//esconderCartas() //cartas de clases se esconden
+botonTodas.addEventListener("click", mostrarTodas)
+botonFiltro.addEventListener("click", filtrarClases)
+botonReserva.addEventListener("click", reserva)
+botonReserva.addEventListener("mousemove", ()=> {
+    botonReserva.title = "Emiliano | 1234"
+})
 
-existeClase() //función para ver clases
-filtrarClases() //función para filtrar clases y crear tabla
-cambiarTitulo() //todas las clases a clases disponibles
-esconderCartas() //cartas de clases se esconden
 
 
 

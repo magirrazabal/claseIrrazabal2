@@ -38,8 +38,12 @@
 }
 .boton {
     grid-area: boton;
+    display: flex block;
+    justify-items: center;
     background-color: #0077b6;
     margin: 7px;
+    height: auto;
+    width: fit-content;
 }
 .boton:hover {
     background-color: #03045e;
